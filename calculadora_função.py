@@ -20,15 +20,15 @@ if opcao == "+":
     valor_soma = soma(num1, num2)
     print(f"{num1} + {num2} == {valor_soma}")
 
-if opcao == "-":
+elif opcao == "-":
     valor_sub = sub(num1, num2)
     print(f"{num1} - {num2} == {valor_sub}")
 
-if opcao == "/":
+elif opcao == "/":
     valor_div = div(num1, num2)
     print(f"{num1} / {num2} == {valor_div}")
 
-if opcao == "*":
+elif opcao == "*":
     valor_mult = mult(num1, num2)
     print(f"{num1} * {num2} == {valor_mult}")
 
