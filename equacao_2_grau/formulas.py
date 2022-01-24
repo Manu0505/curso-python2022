@@ -1,14 +1,14 @@
 import math
 
 def delta(a, b, c):
-    x = math.pow (b, 2) - 4 * a * c
-    return x
+    delta = math.pow (b, 2) - 4 * a * c
+    return delta
 
-def bhaskara1 (a, b, d):
-    x1 = (-b + math.sqrt(d)) / 2 * a
+def x1 (a, b, delta):
+    x1 = (-b + math.sqrt(delta)) / 2 * a
     return x1
     
-def bhaskara2 (a, b, d):
-    x2 = (-b - math.sqrt(d)) / 2 * a
+def x2 (a, b, delta):
+    x2 = (-b - math.sqrt(delta)) / 2 * a
     return x2
 

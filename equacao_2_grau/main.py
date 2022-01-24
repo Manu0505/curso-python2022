@@ -1,22 +1,30 @@
-import formulas
 import math
-
-
-print ('equação do 2º grau \nax² + bx - c')
-
-a = float(input('digite o valor de a:  '))
-b = float(input('digite o valor de b:  '))
-c = float(input('digite o valor de c:  '))
-
-
-print (f'a equação a ser resolvida é: {a}x² + {b}x - {c}')
-
-delta = formulas.delta(a, b, c)
-print (delta)
-if delta >= 0:
-    x1 = formulas.bhaskara1(a, b, delta)
-    x2 = formulas.bhaskara2(a, b, delta)
-    print (f'o valor das raízes da equação é de {x1} e {x2}')
-
-else:
-    print('não existem raízes dentro do conjunto dos números reais para esta equação')
+from PyQt6 import uic, QtWidgets
+# Criando a aplicação princial
+app = QtWidgets.QApplication([])
+# Retorna: Formulário com os componentes; Window é a janela com form
+Form, Window  = uic.loadUiType("equacao_2_grau/layout.ui")
+janela = Window()
+formulario = Form()
+formulario.setupUi(janela)
+janela.show()
+#----------------------------------------------------------------------
+def calcular():
+    a = float(formulario.txt_a.text())
+    b = float(formulario.txt_b.text())
+    c = float(formulario.txt_c.text())
+    formulario.lbl_equacao.setText(f"{a}x² + {b}x - {c}")
+    delta = math.pow (b, 2) - 4 * a * c
+    if delta >= 0:
+        x1 = x1 = (-b + math.sqrt(delta)) / 2 * a
+        x2 = (-b - math.sqrt(delta)) / 2 * a
+        formulario.lbl_delta.setText(f"Δ = {delta}")
+        formulario.lbl_x1.setText(f"x¹ = {x1}")
+        formulario.lbl_x2.setText(f"x² = {x2}")
+    elif delta < 0:
+        formulario.lbl_delta.setText(f"Δ = {delta}")
+        formulario.lbl_x1.setText(f"x¹ = não existem raízes reais")
+        formulario.lbl_x2.setText(f"x² = não existem raízes reais")
+        
+formulario.btn_calcular.clicked.connect(calcular)
+app.exec()

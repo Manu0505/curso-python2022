@@ -1,7 +1,6 @@
 import formulas
 from tkinter import *
 
-from matplotlib.pyplot import pink
 class Application:
     def __init__(self, master=None):
         self.container1 = Frame(master)
