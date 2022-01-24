@@ -1,8 +1,6 @@
 import math
 from PyQt6 import uic, QtWidgets
-# Criando a aplicação princial
 app = QtWidgets.QApplication([])
-# Retorna: Formulário com os componentes; Window é a janela com form
 Form, Window  = uic.loadUiType("equacao_2_grau/layout.ui")
 janela = Window()
 formulario = Form()
