@@ -14,7 +14,7 @@ def calcular():
     formulario.lbl_equacao.setText(f"{a}x² + {b}x - {c}")
     delta = math.pow (b, 2) - 4 * a * c
     if delta >= 0:
-        x1 = x1 = (-b + math.sqrt(delta)) / 2 * a
+        x1 = (-b + math.sqrt(delta)) / 2 * a
         x2 = (-b - math.sqrt(delta)) / 2 * a
         formulario.lbl_delta.setText(f"Δ = {delta}")
         formulario.lbl_x1.setText(f"x¹ = {x1}")
